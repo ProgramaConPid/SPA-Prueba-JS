@@ -14,8 +14,8 @@ export default async function addNewEvent() {
     e.preventDefault()
     const eventName = document.getElementById("event__name").value
     const eventDescription = document.getElementById("event__description").value
-    const eventCapacity = document.getElementById("event__date").value
-    const eventDate = document.getElementById("event__capacity").value
+    const eventCapacity = document.getElementById("event__capacity").value
+    const eventDate = document.getElementById("event__date").value
 
     // Validations for each input of the form
     if (!eventName) {
@@ -42,7 +42,7 @@ export default async function addNewEvent() {
     const newId = maxId + 1;
 
     const newEvent = {
-      id: newId,
+      id: String(newId),
       img: "../assets/event__img.jpg",
       name: eventName,
       description: eventDescription,
