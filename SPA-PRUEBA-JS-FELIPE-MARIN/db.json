@@ -1,0 +1,44 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Pedro",
+      "email": "pedro123@gmail.com",
+      "password": "1234",
+      "role": "admin"
+    },
+    {
+      "id": 2,
+      "name": "Carlos",
+      "email": "carlos123@gmail.com",
+      "password": "carlos123",
+      "role": "visitor"
+    }
+  ],
+  "events": [
+    {
+      "id": 2,
+      "img": "./assets/event__img.jpg",
+      "name": "Karthi",
+      "description": "Lorem unsum lorem unsum",
+      "capacity": 12,
+      "date": "08-Dec, 2021"
+    },
+    {
+      "id": 3,
+      "img": "./assets/event__img.jpg",
+      "name": "Karthi",
+      "description": "Lorem unsum lorem unsum",
+      "capacity": 12,
+      "date": "08-Dec, 2021"
+    },
+    {
+      "id": 4,
+      "img": "./assets/event__img.jpg",
+      "name": "Karthi",
+      "description": "Lorem unsum lorem unsum",
+      "capacity": 12,
+      "date": "08-Dec, 2021"
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+<section id="dashboard">
+  <aside class="sidebar">
+    <h2 class="sidebar__text">EVENTS</h2>
+    
+    <div class="sidebar__user">
+      <img src="./assets/user__img.png" alt="User Image" />
+      <div class="user__info">
+        <h3 class="user__info--name">Random Guy</h3>
+        <p class="user__info--role">Role</p>
+      </div>
+    </div>
+
+    <nav class="sidebar__nav">
+      <a href="#/enrollments" id="enrollment__link">
+        <i class='bxr  bx-bookmark'></i> 
+        Enrollments
+      </a>
+      <a href="#/dashboard">
+        <i class="bx bx-slider-vertical"></i>
+        Events
+      </a>
+    </nav>
+
+    <div class="sidebar__logout">
+      <a href="#/login" class="sidebar__logout--text">Logout</a>
+      <i class="bx bx-arrow-right-square"></i>
+    </div>
+  </aside>
+
+  <section id="dashboard__content">
+
+    <div class="addEvent">
+      <a href="#/create" id="addNewEvent">ADD NEW EVENT</a>
+    </div>
+  
+    <div class="event__info">
+      <h3>Name</h3>
+      <h3>Description</h3>
+      <h3>Capacity</h3>
+      <h3>Date</h3>
+    </div>
+
+    <div class="content" id="content"></div>
+
+  </section>
+</section>
+
+<div id="modal__modify">
+  <form id="form__modify--event">
+    <h2 class="form__title">Modificar Evento</h2>
+    <div class="form__group">
+      <label for="name">Name</label>
+      <input type="text" id="event__name--modify">
+    </div>
+    <div class="form__group">
+      <label for="description">Description</label>
+      <textarea id="event__description--modify"></textarea>
+    </div>
+    <div class="form__group--container">
+      <div class="form__group">
+        <label for="capacity">Capacity</label>
+        <input type="number" id="event__capacity--modify">
+      </div>
+      <div class="form__group">
+        <label for="date">Date</label>
+        <input type="date" id="event__date--modify">
+      </div>
+    </div>
+
+    <div class="form__btns">
+      <button type="button" class="btn__cancel">Cancel</button>
+      <button type="submit" class="btn__save">Save</button>
+    </div>
+  </form>
+</div>
+
+

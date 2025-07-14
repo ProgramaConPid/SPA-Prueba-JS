@@ -1,0 +1,57 @@
+<section id="dashboard">
+  <aside class="sidebar">
+    <h2 class="sidebar__text">EVENTS</h2>
+    
+    <div class="sidebar__user">
+      <img src="./assets/user__img.png" alt="User Image" />
+      <div class="user__info">
+        <h3 class="user__info--name">Random Guy</h3>
+        <p class="user__info--role">Role</p>
+      </div>
+    </div>
+
+    <nav class="sidebar__nav">
+      <a href="#/dashboard">
+        <i class="bx bx-slider-vertical"></i>
+        Events
+      </a>
+    </nav>
+
+    <div class="sidebar__logout">
+      <h3 class="sidebar__logout--text">Logout</h3>
+      <i class="bx bx-arrow-right-square"></i>
+    </div>
+  </aside>
+
+  <section class="create__event">
+    <form id="form__create--event">
+      <h2>Create Event</h2>
+  
+      <div class="form__group">
+        <label for="name">Name</label>
+        <input type="text" id="event__name">
+      </div>
+      <div class="form__group">
+        <label for="description">Description</label>
+        <textarea id="event__description"></textarea>
+      </div>
+      <div class="form__group--container">
+        <div class="form__group">
+          <label for="capacity">Capacity</label>
+          <input type="number" id="event__capacity">
+        </div>
+        <div class="form__group">
+          <label for="date">Date</label>
+          <input type="date" id="event__date">
+        </div>
+      </div>
+  
+      <div class="form__btns">
+        <a href="#/dashboard" class="btn__cancel">Cancel</a>
+        <button type="submit" class="btn__save">Save</button>
+      </div>
+    </form>
+  </section>
+</section>
+
+
