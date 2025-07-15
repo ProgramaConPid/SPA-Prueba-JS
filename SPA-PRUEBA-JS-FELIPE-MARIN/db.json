@@ -40,5 +40,28 @@
       "capacity": 12,
       "date": "08-Dec, 2021"
     }
+  ],
+  "enrollments": [
+    {
+      "id": "1",
+      "img": "../assets/event__img.jpg",
+      "name": "Concierto bad bunny",
+      "description": "Bad Bunny Proxiamente aqui!",
+      "capacity": "30"
+    },
+    {
+      "id": "2",
+      "img": "../assets/event__img.jpg",
+      "name": "Partido de futbol - leyendas",
+      "description": "Lunes 14 de junio (2025) 6pm",
+      "capacity": "12"
+    },
+    {
+      "id": "3",
+      "img": "../assets/event__img.jpg",
+      "name": "Feria de la hamburguesa",
+      "description": "Proximamente burguermaster medellin",
+      "capacity": "22"
+    }
   ]
 }
