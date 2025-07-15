@@ -21,6 +21,45 @@ async function initApp() {
   if (hash === "#/login") await setUpLogin()
   if (hash === "#/register") await setUpRegister()
   if (hash === "#/create") await addNewEvent()
+  if (hash === "#/enrollments") {
+    const nameUser = localStorage.getItem("Name")
+    const roleUser = localStorage.getItem("Role")
+
+    const userInfoName = document.querySelector(".user__info--name")
+    const userInfoRole = document.querySelector(".user__info--role")
+
+    userInfoName.textContent = nameUser ? nameUser.toUpperCase() : "Guest";
+    userInfoRole.textContent = roleUser ? roleUser.toUpperCase() : "Guest";
+
+    const enrollments = await getEnrollments();
+
+    const contentEnrollments = document.getElementById("content");
+    contentEnrollments.innerHTML = "";
+
+    if (enrollments.length === 0) {
+      contentEnrollments.innerHTML = `<p class="no__enrollments">No tienes inscripciones</p>`;
+      contentEnrollments.style.textAlign = "center";
+      return
+    }
+
+    enrollments.forEach((enrollment) => {
+      const enrollmentElement = document.createElement("div");
+      enrollmentElement.classList.add("enrollment__item");
+      enrollmentElement.innerHTML = `
+        <div class="event__name">
+          <img class="img__event" src="${enrollment.img}">
+          <p class="event__name--text">${enrollment.name}</p>
+        </div>
+  
+        <p>${enrollment.description}</p>
+
+        <p>${enrollment.capacity}</p>
+        
+        <p>Estado: Registrado</p>
+      `;
+      contentEnrollments.appendChild(enrollmentElement);
+    });
+  }
   
 }
 
@@ -114,6 +153,38 @@ document.addEventListener("click", (e) => {
       localStorage.removeItem("Name")
       localStorage.removeItem("Role")
     }
+  }
+
+  if (e.target.matches(".enroll__btn")) {
+    const btn = e.target;
+    const eventElement = btn.closest(".divEvent");
+    const eventId = eventElement.getAttribute("id");
+
+    fetch(`http://localhost:3000/events/${eventId}`)
+      .then((res) => res.json())
+      .then((event) => {
+        const enrollmentData = {
+          id: eventId,
+          img: event.img,
+          name: event.name,
+          description: event.description,
+          capacity: event.capacity,
+        };
+
+        fetch("http://localhost:3000/enrollments", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(enrollmentData),
+        })
+        .then(() => {
+          alert("Inscripción exitosa");
+        })
+        .catch((error) => {
+          console.error("Error al inscribir:", error);
+        });
+      });
   }
 })
 
