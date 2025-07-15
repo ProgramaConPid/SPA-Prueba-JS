@@ -382,3 +382,12 @@ aside.sidebar {
   border-radius: .4rem;
   gap: 1.5rem;
 }
+
+.registered {
+  padding: 10px;
+  background-color: var(--btn-bg);
+  color: #fff;
+  border-radius: .3rem;
+  user-select: none;
+  pointer-events: none;
+}
