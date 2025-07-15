@@ -31,9 +31,9 @@ export default async function showEvents() {
           </div>
   
           <div class="event__info--info">
-            <p>${event.description}</p>
-            <p>${event.capacity}</p>
-            <p>${event.date}</p>
+            <p class="event__description">${event.description}</p>
+            <p class="event__capacity">${event.capacity}</p>
+            <p class="event__date">${event.date}</p>
           </div>
   
           <div class="event__btns">
@@ -61,9 +61,9 @@ export default async function showEvents() {
         </div>
   
         <div class="event__info--info">
-          <p>${event.description}</p>
-          <p>${event.capacity}</p>
-          <p>${event.date}</p>
+          <p class="event__description">${event.description}</p>
+          <p class="event__capacity">${event.capacity}</p>
+          <p class="event__date">${event.date}</p>
         </div>
   
         <div class="event__btns">
