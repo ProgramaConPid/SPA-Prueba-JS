@@ -6,6 +6,7 @@ import showEvents from "./app/components/showEvents.js"
 import deleteEvent from "./app/actions/deleteEvent.js"
 import addNewEvent from "./app/actions/addNewEvent.js"
 import modifyEvent from "./app/actions/modifyEvent.js"
+import getEnrollments from "./app/actions/getEnrollments.js"
 
 // Function that start the page 
 async function initApp() {
@@ -55,7 +56,7 @@ async function initApp() {
 
         <p>${enrollment.capacity}</p>
         
-        <p>Estado: Registrado</p>
+        <p>Registrado</p>
       `;
       contentEnrollments.appendChild(enrollmentElement);
     });
@@ -134,6 +135,24 @@ document.addEventListener("click", (e) => {
           newCapacity.value,
           newDate.value
         );
+
+        const updatedEventElement = document.getElementById(eventId);
+        if (updatedEventElement) {
+          const nameElem =
+            updatedEventElement.querySelector(".event__name--text");
+          if (nameElem) nameElem.textContent = newName.value;
+
+          const descElem = updatedEventElement.querySelector(
+            ".event__description"
+          );
+          if (descElem) descElem.textContent = newDescription.value;
+
+          const capElem = updatedEventElement.querySelector(".event__capacity");
+          if (capElem) capElem.textContent = newCapacity.value;
+
+          const dateElem = updatedEventElement.querySelector(".event__date");
+          if (dateElem) dateElem.textContent = newDate.value;
+        }
 
         formModifyEvent.reset();
         modalModifyEvent.classList.remove("active");
